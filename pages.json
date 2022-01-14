@@ -1,0 +1,65 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "zebra-swiper"
+			}
+		}, {
+			"path": "pages/base/index",
+			"style": {
+				"navigationBarTitleText": "基础轮播",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/fade/index",
+			"style": {
+				"navigationBarTitleText": "淡入",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/cube/index",
+			"style": {
+				"navigationBarTitleText": "方块",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/coverflow/index",
+			"style": {
+				"navigationBarTitleText": "3D流",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/flip/index",
+			"style": {
+				"navigationBarTitleText": "3D翻转",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/cards/index",
+			"style": {
+				"navigationBarTitleText": "卡片式",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/creative/index",
+			"style": {
+				"navigationBarTitleText": "创意性",
+				"enablePullDownRefresh": false
+			}
+
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "zebra-swiper",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	}
+}
