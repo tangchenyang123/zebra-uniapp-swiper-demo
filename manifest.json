@@ -1,7 +1,7 @@
 {
     "name" : "zebra-swiper",
     "appid" : "__UNI__CB7849F",
-    "description" : "",
+    "description" : "适配多端的高自定义轮播组件",
     "versionName" : "1.0.0",
     "versionCode" : "100",
     "transformPx" : false,
