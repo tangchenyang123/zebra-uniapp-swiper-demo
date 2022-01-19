@@ -29,6 +29,7 @@
 		margin: 30rpx;
 		border-radius: 8rpx;
 		box-shadow: 0rpx 4rpx 24rpx 0rpx rgba(0, 0, 0, 0.05);
+		overflow: hidden;
 
 		&__title {
 			margin: 0;
