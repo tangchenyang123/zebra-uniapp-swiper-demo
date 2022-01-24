@@ -55,7 +55,25 @@
 			}
 
 		}
-	],
+	    ,{
+            "path" : "pages/indicator/index",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "指示器",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/indicator-custom/index",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "自定义",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "zebra-swiper",

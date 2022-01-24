@@ -36,4 +36,16 @@ export default [{
 			image: url + '/creative/creative@4x.png'
 		}]
 	},
+	{
+		groupName: '指示器',
+		list: [{
+			path: '/indicator',
+			title: 'Indicator 指示器',
+			image: url + '/indicator/indicator@4x.png'
+		}, {
+			path: '/indicator-custom',
+			title: 'Indicator-Custom 自定义',
+			image: url + '/indicator-custom/indicator-custom@4x.png'
+		}]
+	}
 ]
