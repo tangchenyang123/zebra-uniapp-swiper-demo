@@ -6,6 +6,10 @@ export default [{
 			path: '/base',
 			title: 'Base 基础',
 			image: url + '/base/base@4x.png'
+		}, {
+			path: '/switcher',
+			title: 'Switcher 切换器',
+			image: url + '/switcher/switcher@4x.png'
 		}]
 	},
 	{

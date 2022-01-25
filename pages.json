@@ -73,6 +73,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/switcher/index",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "Switcher",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
