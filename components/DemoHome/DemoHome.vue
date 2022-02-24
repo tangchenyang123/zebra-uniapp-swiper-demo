@@ -4,7 +4,7 @@
 			<image mode="aspectFit" class="demo-home__image" src="https://cdn.zebraui.com/zebra-swiper/logo.png" />
 		</view>
 		<view class="demo-home__desc">
-			zebra-swiper适配多端的高度自定义轮播组件
+			zebra-swiper适配多端的高自定义轮播组件，全面对标swiper并兼容全端
 		</view>
 		<view v-for="(group,index) in list" :key="index">
 			<demo-home-nav :group="group" />

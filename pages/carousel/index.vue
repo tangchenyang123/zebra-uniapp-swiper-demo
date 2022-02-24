@@ -1,39 +1,39 @@
 <template>
 	<view class="demo-swiper">
-		<demo-block title="基础用法">
-			<z-swiper>
+		<demo-block title="数量">
+			<z-swiper :options="{slidesPerView : 2}">
 				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
 				</z-swiper-item>
 			</z-swiper>
 		</demo-block>
-		<demo-block title="监听事件">
-			<z-swiper ref="zSwiper" @slideChange="onChange">
+		<demo-block title="居中">
+			<z-swiper :options="{slidesPerView : 2,centeredSlides : true}">
 				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
 				</z-swiper-item>
 			</z-swiper>
 		</demo-block>
-		<demo-block title="纵向">
-			<z-swiper custom-style="height:300rpx;" :options="options">
+		<demo-block title="贴合边缘">
+			<z-swiper :options="{slidesPerView : 3,centeredSlides : true,centeredSlidesBounds: true}">
 				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
 				</z-swiper-item>
 			</z-swiper>
 		</demo-block>
-		<demo-block title="切换速度">
-			<z-swiper :options="{speed:2000}">
+		<demo-block title="分组">
+			<z-swiper :options="{slidesPerView : 3, slidesPerGroup : 3}">
 				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
 				</z-swiper-item>
 			</z-swiper>
 		</demo-block>
-		<demo-block title="禁用">
-			<z-swiper :options="{enabled:false}">
+		<demo-block title="距离">
+			<z-swiper :options="{slidesPerView : 3,spaceBetween : 20}">
 				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
@@ -63,28 +63,12 @@
 				]
 			}
 		},
-		onReady() {
-			// #ifdef MP-TOUTIAO
-			this.$refs.zSwiper.setSwiperOn("slideChange", (swiper) => {
-				uni.showToast({
-					title: '当前 swiper 索引：' + swiper.activeIndex,
-					icon: 'none'
-				})
-			});
-			// #endif
-		},
 		methods: {
 			// #ifdef MP
 			toJSON() {
 				return this
 			},
 			// #endif
-			onChange(swiper) {
-				uni.showToast({
-					title: '当前 swiper 索引：' + swiper.activeIndex,
-					icon: 'none'
-				})
-			}
 		}
 	}
 </script>

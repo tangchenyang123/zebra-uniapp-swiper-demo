@@ -1,100 +1,37 @@
 <template>
 	<view class="demo-swiper">
-		<demo-block title="切换效果-卡片式">
-			<view class="demo-swiper-cards">
-				<z-swiper effect="cards" :loop="false" :showIndicators="false"
-					customStyle="height:640rpx;width:480rpx;">
-					<z-swiper-item>
-						<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg"
-							mode="aspectFill">
-						</image>
-					</z-swiper-item>
-					<z-swiper-item>
-						<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe2.jpg"
-							mode="aspectFill">
-						</image>
-					</z-swiper-item>
-					<z-swiper-item>
-						<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe3.jpg"
-							mode="aspectFill">
-						</image>
-					</z-swiper-item>
-					<z-swiper-item>
-						<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe4.jpg"
-							mode="aspectFill">
-						</image>
-					</z-swiper-item>
-					<z-swiper-item>
-						<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg"
-							mode="aspectFill">
-						</image>
-					</z-swiper-item>
-				</z-swiper>
-			</view>
+		<demo-block title="切换效果-卡片">
+			<z-swiper :options="options">
+				<z-swiper-item :custom-style="slideCustomStyle" v-for="(item,index) in list" :key="index">
+					<image class="image" :src="item" mode="aspectFill">
+					</image>
+				</z-swiper-item>
+			</z-swiper>
 		</demo-block>
-		<demo-block title="自动切换">
-			<view class="demo-swiper-cards">
-				<z-swiper effect="cards" autoplay="2000" :loop="false" :showIndicators="false"
-					customStyle="height:640rpx;width:480rpx;">
-					<z-swiper-item>
-						<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg"
-							mode="aspectFill">
-						</image>
-					</z-swiper-item>
-					<z-swiper-item>
-						<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe2.jpg"
-							mode="aspectFill">
-						</image>
-					</z-swiper-item>
-					<z-swiper-item>
-						<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe3.jpg"
-							mode="aspectFill">
-						</image>
-					</z-swiper-item>
-					<z-swiper-item>
-						<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe4.jpg"
-							mode="aspectFill">
-						</image>
-					</z-swiper-item>
-					<z-swiper-item>
-						<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg"
-							mode="aspectFill">
-						</image>
-					</z-swiper-item>
-				</z-swiper>
-			</view>
+		<demo-block title="自动播放">
+			<z-swiper :options="optionsAutoplay">
+				<z-swiper-item :custom-style="slideCustomStyle" v-for="(item,index) in list" :key="index">
+					<image class="image" :src="item" mode="aspectFill">
+					</image>
+				</z-swiper-item>
+			</z-swiper>
 		</demo-block>
 		<demo-block title="纵向">
-			<view class="demo-swiper-cards">
-				<z-swiper effect="cards" vertical :loop="false" :showIndicators="false"
-					customStyle="height:640rpx;width:480rpx;">
-					<z-swiper-item>
-						<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg"
-							mode="aspectFill">
-						</image>
-					</z-swiper-item>
-					<z-swiper-item>
-						<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe2.jpg"
-							mode="aspectFill">
-						</image>
-					</z-swiper-item>
-					<z-swiper-item>
-						<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe3.jpg"
-							mode="aspectFill">
-						</image>
-					</z-swiper-item>
-					<z-swiper-item>
-						<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe4.jpg"
-							mode="aspectFill">
-						</image>
-					</z-swiper-item>
-					<z-swiper-item>
-						<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg"
-							mode="aspectFill">
-						</image>
-					</z-swiper-item>
-				</z-swiper>
-			</view>
+			<z-swiper custom-style="height:800rpx;" :options="optionsVertical">
+				<z-swiper-item :custom-style="slideCustomStyle" v-for="(item,index) in list" :key="index">
+					<image class="image" :src="item" mode="aspectFill">
+					</image>
+				</z-swiper-item>
+			</z-swiper>
+		</demo-block>
+		<demo-block title="无限循环">
+			<z-swiper :options="optionsLoop">
+				<z-swiper-item :custom-style="slideCustomStyle" v-for="(item,index) in loopList
+				" :key="index">
+					<image class="image" :src="item" mode="aspectFill">
+					</image>
+				</z-swiper-item>
+			</z-swiper>
 		</demo-block>
 	</view>
 </template>
@@ -104,7 +41,51 @@
 	export default {
 		components: {
 			DemoBlock
-		}
+		},
+		data() {
+			return {
+				slideCustomStyle: {
+					display: 'flex',
+					alignItems: 'center',
+					justifyContent: 'center',
+					borderRadius: '36rpx'
+				},
+				options: {
+					effect: 'cards'
+				},
+				optionsAutoplay: {
+					effect: 'cards',
+					autoplay: true
+				},
+				optionsVertical: {
+					effect: 'cards',
+					direction: 'vertical'
+				},
+				optionsLoop: {
+					effect: 'cards',
+					loop: true,
+					loopedSlides: 2,
+				},
+				list: [
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe2.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe3.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe4.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg',
+				],
+				loopList: [
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe4.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe2.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe3.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe4.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe2.jpg',
+				],
+			}
+		},
 	}
 </script>
 
@@ -112,16 +93,8 @@
 	.demo-swiper {
 		.image {
 			height: 640rpx;
-			width: 100%;
-			border-radius: 12rpx;
-		}
-
-		.demo-swiper-cards {
-			height: 700rpx;
-			width: 100%;
-			display: flex;
-			align-items: center;
-			justify-content: center;
+			width: 480rpx;
+			border-radius: 24rpx;
 		}
 	}
 </style>

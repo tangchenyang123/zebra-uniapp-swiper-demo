@@ -54,35 +54,57 @@
 				"enablePullDownRefresh": false
 			}
 
+		}, {
+			"path": "pages/indicator/index",
+			"style": {
+				"navigationBarTitleText": "指示器",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/indicator-custom/index",
+			"style": {
+				"navigationBarTitleText": "自定义",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/switcher/index",
+			"style": {
+				"navigationBarTitleText": "Switcher",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/carousel/index",
+			"style": {
+				"navigationBarTitleText": "Carousel",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/loop/index",
+			"style": {
+				"navigationBarTitleText": "Loop",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/autoplay/index",
+			"style": {
+				"navigationBarTitleText": "Autoplay",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/panorama/index",
+			"style": {
+				"navigationBarTitleText": "Panorama",
+				"enablePullDownRefresh": false
+			}
+
 		}
-	    ,{
-            "path" : "pages/indicator/index",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "指示器",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/indicator-custom/index",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "自定义",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/switcher/index",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "Switcher",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-    ],
+	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "zebra-swiper",

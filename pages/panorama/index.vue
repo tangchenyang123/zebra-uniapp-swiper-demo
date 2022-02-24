@@ -1,9 +1,8 @@
 <template>
 	<view class="demo-swiper">
-		<demo-block title="切换效果-3D流">
+		<demo-block title="切换效果-全景">
 			<z-swiper :options="options">
-				<z-swiper-item :custom-style="{width:'500rpx',height:'500rpx'}" v-for="(item,index) in list"
-					:key="index">
+				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
 				</z-swiper-item>
@@ -11,16 +10,7 @@
 		</demo-block>
 		<demo-block title="自动播放">
 			<z-swiper :options="optionsAutoplay">
-				<z-swiper-item :custom-style="{width:'500rpx',height:'500rpx'}" v-for="(item,index) in list"
-					:key="index">
-					<image class="image" :src="item" mode="aspectFill">
-					</image>
-				</z-swiper-item>
-			</z-swiper>
-		</demo-block>
-		<demo-block title="纵向">
-			<z-swiper custom-style="height:600rpx;" :options="optionsVertical">
-				<z-swiper-item :custom-style="{width:'100%',height:'400rpx'}" v-for="(item,index) in list" :key="index">
+				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
 				</z-swiper-item>
@@ -28,7 +18,7 @@
 		</demo-block>
 		<demo-block title="无限循环">
 			<z-swiper :options="optionsLoop">
-				<z-swiper-item :custom-style="{width:'500rpx',height:'500rpx'}" v-for="(item,index) in loopList
+				<z-swiper-item v-for="(item,index) in loopList
 				" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
@@ -47,55 +37,33 @@
 		data() {
 			return {
 				options: {
-					effect: 'coverflow',
+					effect: 'panorama',
+					slidesPerView: 1.5,
 					centeredSlides: true,
-					slidesPerView: 'auto',
-					coverflowEffect: {
-						rotate: 50,
-						stretch: 0,
-						depth: 100,
-						modifier: 1,
-						slideShadows: true,
+					panorama: {
+						depth: 150,
+						rotate: 45,
 					},
 				},
 				optionsAutoplay: {
-					effect: 'coverflow',
+					effect: 'panorama',
+					slidesPerView: 1.5,
 					centeredSlides: true,
-					slidesPerView: 'auto',
-					coverflowEffect: {
-						rotate: 50,
-						stretch: 0,
-						depth: 100,
-						modifier: 1,
-						slideShadows: true,
+					panorama: {
+						depth: 150,
+						rotate: 45,
 					},
 					autoplay: true
 				},
-				optionsVertical: {
-					effect: 'coverflow',
-					centeredSlides: true,
-					slidesPerView: 'auto',
-					coverflowEffect: {
-						rotate: 50,
-						stretch: 0,
-						depth: 100,
-						modifier: 1,
-						slideShadows: true,
-					},
-					direction: 'vertical'
-				},
 				optionsLoop: {
-					effect: 'coverflow',
+					effect: 'panorama',
+					slidesPerView: 1.5,
 					centeredSlides: true,
-					slidesPerView: 'auto',
-					coverflowEffect: {
-						rotate: 50,
-						stretch: 0,
-						depth: 100,
-						modifier: 1,
-						slideShadows: true,
+					loopedSlides: 2,
+					panorama: {
+						depth: 150,
+						rotate: 45,
 					},
-					loopedSlides: 5,
 					loop: true
 				},
 				list: [
@@ -106,9 +74,6 @@
 					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg',
 				],
 				loopList: [
-					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg',
-					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe2.jpg',
-					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe3.jpg',
 					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe4.jpg',
 					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg',
 					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg',
@@ -118,9 +83,6 @@
 					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg',
 					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg',
 					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe2.jpg',
-					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe3.jpg',
-					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe4.jpg',
-					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg',
 				],
 			}
 		},
@@ -130,7 +92,7 @@
 <style scoped lang="scss">
 	.demo-swiper {
 		.image {
-			height: 100%;
+			height: 560rpx;
 			width: 100%;
 		}
 	}

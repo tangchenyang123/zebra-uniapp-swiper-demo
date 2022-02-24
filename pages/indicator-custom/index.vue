@@ -1,136 +1,52 @@
 <template>
 	<view class="demo-swiper">
 		<demo-block title="自定义">
-			<z-swiper @change="onChange" :show-indicators="false">
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg"
-						mode="aspectFill">
-					</image>
-				</z-swiper-item>
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe2.jpg"
-						mode="aspectFill">
-					</image>
-				</z-swiper-item>
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe3.jpg"
-						mode="aspectFill">
-					</image>
-				</z-swiper-item>
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe4.jpg"
-						mode="aspectFill">
-					</image>
-				</z-swiper-item>
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg"
-						mode="aspectFill">
+			<z-swiper @slideChange="onChange">
+				<z-swiper-item v-for="(item,index) in list" :key="index">
+					<image class="image" :src="item" mode="aspectFill">
 					</image>
 				</z-swiper-item>
 				<template #indicator>
-					<view class="custom-indicator">{{ current + 1 }}/5</view>
+					<view class="custom-indicator">{{ current + 1 }}/{{list.length}}</view>
 				</template>
 			</z-swiper>
-			<z-swiper @change="onChange1" :show-indicators="false" ref="zSwiper">
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg"
-						mode="aspectFill">
-					</image>
-				</z-swiper-item>
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe2.jpg"
-						mode="aspectFill">
-					</image>
-				</z-swiper-item>
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe3.jpg"
-						mode="aspectFill">
-					</image>
-				</z-swiper-item>
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe4.jpg"
-						mode="aspectFill">
-					</image>
-				</z-swiper-item>
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg"
-						mode="aspectFill">
+			<z-swiper @slideChange="onChange1" ref="zSwiper">
+				<z-swiper-item v-for="(item,index) in list" :key="index">
+					<image class="image" :src="item" mode="aspectFill">
 					</image>
 				</z-swiper-item>
 				<template #indicator>
 					<view class="custom-indicator-list">
 						<view
 							:class="['custom-indicator-list-item',index == current1?'custom-indicator-list-item-active':'']"
-							v-for="(item,index) in 5" :key="index" @click="changSwiper(index)">
+							v-for="(item,index) in list.length" :key="index" @click="changSwiper(index)">
 							{{index+1}}
 						</view>
 					</view>
 				</template>
 			</z-swiper>
-			<z-swiper @change="onChange2" :show-indicators="false">
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg"
-						mode="aspectFill">
-					</image>
-				</z-swiper-item>
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe2.jpg"
-						mode="aspectFill">
-					</image>
-				</z-swiper-item>
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe3.jpg"
-						mode="aspectFill">
-					</image>
-				</z-swiper-item>
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe4.jpg"
-						mode="aspectFill">
-					</image>
-				</z-swiper-item>
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg"
-						mode="aspectFill">
+			<z-swiper @slideChange="onChange2">
+				<z-swiper-item v-for="(item,index) in list" :key="index">
+					<image class="image" :src="item" mode="aspectFill">
 					</image>
 				</z-swiper-item>
 				<template #indicator>
 					<view class="custom-indicator-list1">
 						<view
 							:class="['custom-indicator-list-item1',index == current2?'custom-indicator-list-item1-active':'']"
-							v-for="(item,index) in 5" :key="index">
+							v-for="(item,index) in list" :key="index">
 						</view>
 					</view>
 				</template>
 			</z-swiper>
-			<z-swiper @change="onChange3" :show-indicators="false">
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg"
-						mode="aspectFill">
-					</image>
-				</z-swiper-item>
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe2.jpg"
-						mode="aspectFill">
-					</image>
-				</z-swiper-item>
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe3.jpg"
-						mode="aspectFill">
-					</image>
-				</z-swiper-item>
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe4.jpg"
-						mode="aspectFill">
-					</image>
-				</z-swiper-item>
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg"
-						mode="aspectFill">
+			<z-swiper @slideChange="onChange3">
+				<z-swiper-item v-for="(item,index) in list" :key="index">
+					<image class="image" :src="item" mode="aspectFill">
 					</image>
 				</z-swiper-item>
 				<template #indicator>
 					<view class="custom-indicator-list2">
-						<template v-for="(item,index) in 5">
+						<template v-for="(item,index) in list">
 							<view :key="index" v-if="index == current3 - 2"
 								class="custom-indicator-list2-bullet custom-indicator-list2-bullet-prev-prev">
 
@@ -170,25 +86,37 @@
 				current: 0,
 				current1: 0,
 				current2: 0,
-				current3: 0
+				current3: 0,
+				list: [
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe2.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe3.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe4.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg',
+				],
 			}
 		},
 		methods: {
-			onChange(index) {
-				this.current = index;
+			// #ifdef MP
+			toJSON() {
+				return this
 			},
-			onChange1(index) {
-				this.current1 = index;
+			// #endif
+			onChange(swiper) {
+				this.current = swiper.activeIndex;
 			},
-			onChange2(index) {
-				this.current2 = index;
+			onChange1(swiper) {
+				this.current1 = swiper.activeIndex;
 			},
-			onChange3(index) {
-				this.current3 = index;
+			onChange2(swiper) {
+				this.current2 = swiper.activeIndex;
+			},
+			onChange3(swiper) {
+				this.current3 = swiper.activeIndex;
 			},
 			changSwiper(index) {
 				if (index != this.current1) {
-					this.$refs.zSwiper.swipeTo(index);
+					this.$refs.zSwiper.swiper.slideTo(index, 300, false);
 				}
 			},
 		}
@@ -210,6 +138,7 @@
 			font-size: 24rpx;
 			color: #FFFFFF;
 			background: rgba(0, 0, 0, 0.1);
+			z-index: 10;
 		}
 
 		.custom-indicator-list {
@@ -220,6 +149,7 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			z-index: 10;
 
 			.custom-indicator-list-item {
 				width: 40rpx;
@@ -248,6 +178,7 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			z-index: 10;
 
 			.custom-indicator-list-item1 {
 				margin: 0 5rpx;
@@ -273,6 +204,7 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			z-index: 10;
 
 			.custom-indicator-list2-bullet {
 				margin: 0 8rpx;

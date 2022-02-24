@@ -1,40 +1,40 @@
 <template>
 	<view class="demo-swiper">
 		<demo-block title="基础用法">
-			<z-swiper>
+			<z-swiper :options="{autoplay:true}">
 				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
 				</z-swiper-item>
 			</z-swiper>
 		</demo-block>
-		<demo-block title="监听事件">
-			<z-swiper ref="zSwiper" @slideChange="onChange">
+		<demo-block title="时间间隔">
+			<z-swiper :options="{ autoplay: {delay: 1000}}">
 				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
 				</z-swiper-item>
 			</z-swiper>
 		</demo-block>
-		<demo-block title="纵向">
-			<z-swiper custom-style="height:300rpx;" :options="options">
+		<demo-block title="自动停止">
+			<z-swiper :options="{ autoplay: {stopOnLastSlide: true}}">
 				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
 				</z-swiper-item>
 			</z-swiper>
 		</demo-block>
-		<demo-block title="切换速度">
-			<z-swiper :options="{speed:2000}">
+		<demo-block title="反向">
+			<z-swiper :options="{ autoplay: {reverseDirection: true}}">
 				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
 				</z-swiper-item>
 			</z-swiper>
 		</demo-block>
-		<demo-block title="禁用">
-			<z-swiper :options="{enabled:false}">
-				<z-swiper-item v-for="(item,index) in list" :key="index">
+		<demo-block title="无限循环">
+			<z-swiper :options="{ autoplay:true,loop:true}">
+				<z-swiper-item v-for="(item,index) in loopList" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
 				</z-swiper-item>
@@ -51,39 +51,22 @@
 		},
 		data() {
 			return {
-				options: {
-					direction: 'vertical'
-				},
 				list: [
 					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg',
 					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe2.jpg',
 					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe3.jpg',
 					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe4.jpg',
 					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg',
-				]
-			}
-		},
-		onReady() {
-			// #ifdef MP-TOUTIAO
-			this.$refs.zSwiper.setSwiperOn("slideChange", (swiper) => {
-				uni.showToast({
-					title: '当前 swiper 索引：' + swiper.activeIndex,
-					icon: 'none'
-				})
-			});
-			// #endif
-		},
-		methods: {
-			// #ifdef MP
-			toJSON() {
-				return this
-			},
-			// #endif
-			onChange(swiper) {
-				uni.showToast({
-					title: '当前 swiper 索引：' + swiper.activeIndex,
-					icon: 'none'
-				})
+				],
+				loopList: [
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe2.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe3.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe4.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg',
+				],
 			}
 		}
 	}

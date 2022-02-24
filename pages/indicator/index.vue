@@ -1,59 +1,49 @@
 <template>
 	<view class="demo-swiper">
 		<demo-block title="基础用法">
-			<z-swiper>
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg"
-						mode="aspectFill">
-					</image>
-				</z-swiper-item>
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe2.jpg"
-						mode="aspectFill">
-					</image>
-				</z-swiper-item>
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe3.jpg"
-						mode="aspectFill">
-					</image>
-				</z-swiper-item>
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe4.jpg"
-						mode="aspectFill">
-					</image>
-				</z-swiper-item>
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg"
-						mode="aspectFill">
+			<z-swiper :options="options">
+				<z-swiper-item v-for="(item,index) in list" :key="index">
+					<image class="image" :src="item" mode="aspectFill">
 					</image>
 				</z-swiper-item>
 			</z-swiper>
 		</demo-block>
-		<demo-block title="自定义颜色">
-			<z-swiper indicator-color="white">
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg"
-						mode="aspectFill">
+		<demo-block title="无限循环">
+			<z-swiper :options="optionsLoop">
+				<z-swiper-item v-for="(item,index) in listLoop" :key="index">
+					<image class="image" :src="item" mode="aspectFill">
 					</image>
 				</z-swiper-item>
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe2.jpg"
-						mode="aspectFill">
+			</z-swiper>
+		</demo-block>
+		<demo-block title="分式类型">
+			<z-swiper :options="optionsFraction">
+				<z-swiper-item v-for="(item,index) in list" :key="index">
+					<image class="image" :src="item" mode="aspectFill">
 					</image>
 				</z-swiper-item>
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe3.jpg"
-						mode="aspectFill">
+			</z-swiper>
+		</demo-block>
+		<demo-block title="进度条类型">
+			<z-swiper :options="optionsProgressbar">
+				<z-swiper-item v-for="(item,index) in list" :key="index">
+					<image class="image" :src="item" mode="aspectFill">
 					</image>
 				</z-swiper-item>
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe4.jpg"
-						mode="aspectFill">
+			</z-swiper>
+		</demo-block>
+		<demo-block title="动态分页器">
+			<z-swiper :options="optionsDynamicBullets">
+				<z-swiper-item v-for="(item,index) in list" :key="index">
+					<image class="image" :src="item" mode="aspectFill">
 					</image>
 				</z-swiper-item>
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg"
-						mode="aspectFill">
+			</z-swiper>
+		</demo-block>
+		<demo-block title="点击切换">
+			<z-swiper :options="optionsClickable">
+				<z-swiper-item v-for="(item,index) in list" :key="index">
+					<image class="image" :src="item" mode="aspectFill">
 					</image>
 				</z-swiper-item>
 			</z-swiper>
@@ -67,6 +57,62 @@
 		components: {
 			DemoBlock
 		},
+		data() {
+			return {
+				options: {
+					pagination: {
+						el: true,
+					},
+				},
+				optionsLoop: {
+					pagination: {
+						el: true,
+					},
+					loop: true
+				},
+				optionsFraction: {
+					pagination: {
+						el: true,
+						type: 'fraction'
+					},
+				},
+				optionsProgressbar: {
+					pagination: {
+						el: true,
+						type: 'progressbar'
+					},
+				},
+				optionsDynamicBullets: {
+					pagination: {
+						el: true,
+						dynamicBullets: true,
+					},
+				},
+				optionsClickable: {
+					pagination: {
+						el: true,
+						clickable: true,
+					},
+				},
+				list: [
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe2.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe3.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe4.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg',
+				],
+				listLoop: [
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe2.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe3.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe4.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg',
+				]
+			}
+		},
+		methods: {}
 	}
 </script>
 

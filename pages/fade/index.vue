@@ -1,88 +1,33 @@
 <template>
 	<view class="demo-swiper">
 		<demo-block title="切换效果-淡入">
-			<z-swiper effect="fade" :loop="false" :showIndicators="false">
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg"
-						mode="aspectFill">
-					</image>
-				</z-swiper-item>
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe2.jpg"
-						mode="aspectFill">
-					</image>
-				</z-swiper-item>
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe3.jpg"
-						mode="aspectFill">
-					</image>
-				</z-swiper-item>
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe4.jpg"
-						mode="aspectFill">
-					</image>
-				</z-swiper-item>
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg"
-						mode="aspectFill">
+			<z-swiper :options="options">
+				<z-swiper-item v-for="(item,index) in list" :key="index">
+					<image class="image" :src="item" mode="aspectFill">
 					</image>
 				</z-swiper-item>
 			</z-swiper>
 		</demo-block>
 		<demo-block title="自动播放">
-			<z-swiper effect="fade" :loop="false" autoplay="2000" :showIndicators="false">
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg"
-						mode="aspectFill">
-					</image>
-				</z-swiper-item>
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe2.jpg"
-						mode="aspectFill">
-					</image>
-				</z-swiper-item>
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe3.jpg"
-						mode="aspectFill">
-					</image>
-				</z-swiper-item>
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe4.jpg"
-						mode="aspectFill">
-					</image>
-				</z-swiper-item>
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg"
-						mode="aspectFill">
+			<z-swiper :options="optionsAutoplay">
+				<z-swiper-item v-for="(item,index) in list" :key="index">
+					<image class="image" :src="item" mode="aspectFill">
 					</image>
 				</z-swiper-item>
 			</z-swiper>
 		</demo-block>
 		<demo-block title="纵向">
-			<z-swiper effect="fade" :loop="false" vertical :showIndicators="false" customStyle="height: 300rpx;">
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg"
-						mode="aspectFill">
+			<z-swiper custom-style="height:300rpx;" :options="optionsVertical">
+				<z-swiper-item v-for="(item,index) in list" :key="index">
+					<image class="image" :src="item" mode="aspectFill">
 					</image>
 				</z-swiper-item>
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe2.jpg"
-						mode="aspectFill">
-					</image>
-				</z-swiper-item>
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe3.jpg"
-						mode="aspectFill">
-					</image>
-				</z-swiper-item>
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe4.jpg"
-						mode="aspectFill">
-					</image>
-				</z-swiper-item>
-				<z-swiper-item>
-					<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg"
-						mode="aspectFill">
+			</z-swiper>
+		</demo-block>
+		<demo-block title="无限循环">
+			<z-swiper :options="optionsLoop">
+				<z-swiper-item v-for="(item,index) in loopList" :key="index">
+					<image class="image" :src="item" mode="aspectFill">
 					</image>
 				</z-swiper-item>
 			</z-swiper>
@@ -95,7 +40,54 @@
 	export default {
 		components: {
 			DemoBlock
-		}
+		},
+		data() {
+			return {
+				options: {
+					effect: 'fade',
+					fadeEffect: {
+						crossFade: true
+					}
+				},
+				optionsAutoplay: {
+					effect: 'fade',
+					fadeEffect: {
+						crossFade: true
+					},
+					autoplay: true
+				},
+				optionsVertical: {
+					effect: 'fade',
+					fadeEffect: {
+						crossFade: true
+					},
+					direction: 'vertical'
+				},
+				optionsLoop: {
+					effect: 'fade',
+					fadeEffect: {
+						crossFade: true
+					},
+					loop: true
+				},
+				list: [
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe2.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe3.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe4.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg',
+				],
+				loopList: [
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe2.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe3.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe4.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg',
+				],
+			}
+		},
 	}
 </script>
 

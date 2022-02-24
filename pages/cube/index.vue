@@ -1,131 +1,37 @@
 <template>
 	<view class="demo-swiper">
 		<demo-block title="切换效果-方块">
-			<view class="demo-swiper-cube">
-				<z-swiper effect="cube" :loop="false" :showIndicators="false" customStyle="height:400rpx;width:400rpx;">
-					<z-swiper-item>
-						<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg"
-							mode="aspectFill">
-						</image>
-					</z-swiper-item>
-					<z-swiper-item>
-						<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe2.jpg"
-							mode="aspectFill">
-						</image>
-					</z-swiper-item>
-					<z-swiper-item>
-						<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe3.jpg"
-							mode="aspectFill">
-						</image>
-					</z-swiper-item>
-					<z-swiper-item>
-						<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe4.jpg"
-							mode="aspectFill">
-						</image>
-					</z-swiper-item>
-					<z-swiper-item>
-						<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg"
-							mode="aspectFill">
-						</image>
-					</z-swiper-item>
-				</z-swiper>
-			</view>
-		</demo-block>
-		<demo-block title="阴影">
-			<view class="demo-swiper-cube">
-				<z-swiper effect="cube" cube-shadow :loop="false" :showIndicators="false"
-					customStyle="height:400rpx;width:400rpx;">
-					<z-swiper-item>
-						<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg"
-							mode="aspectFill">
-						</image>
-					</z-swiper-item>
-					<z-swiper-item>
-						<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe2.jpg"
-							mode="aspectFill">
-						</image>
-					</z-swiper-item>
-					<z-swiper-item>
-						<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe3.jpg"
-							mode="aspectFill">
-						</image>
-					</z-swiper-item>
-					<z-swiper-item>
-						<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe4.jpg"
-							mode="aspectFill">
-						</image>
-					</z-swiper-item>
-					<z-swiper-item>
-						<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg"
-							mode="aspectFill">
-						</image>
-					</z-swiper-item>
-				</z-swiper>
-			</view>
+			<z-swiper :options="options">
+				<z-swiper-item v-for="(item,index) in list" :key="index">
+					<image class="image" :src="item" mode="aspectFill">
+					</image>
+				</z-swiper-item>
+			</z-swiper>
 		</demo-block>
 		<demo-block title="自动播放">
-			<view class="demo-swiper-cube">
-				<z-swiper effect="cube" cube-shadow autoplay="2000" :loop="false" :showIndicators="false"
-					customStyle="height:400rpx;width:400rpx;">
-					<z-swiper-item>
-						<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg"
-							mode="aspectFill">
-						</image>
-					</z-swiper-item>
-					<z-swiper-item>
-						<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe2.jpg"
-							mode="aspectFill">
-						</image>
-					</z-swiper-item>
-					<z-swiper-item>
-						<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe3.jpg"
-							mode="aspectFill">
-						</image>
-					</z-swiper-item>
-					<z-swiper-item>
-						<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe4.jpg"
-							mode="aspectFill">
-						</image>
-					</z-swiper-item>
-					<z-swiper-item>
-						<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg"
-							mode="aspectFill">
-						</image>
-					</z-swiper-item>
-				</z-swiper>
-			</view>
+			<z-swiper :options="optionsAutoplay">
+				<z-swiper-item v-for="(item,index) in list" :key="index">
+					<image class="image" :src="item" mode="aspectFill">
+					</image>
+				</z-swiper-item>
+			</z-swiper>
 		</demo-block>
 		<demo-block title="纵向">
-			<view class="demo-swiper-cube">
-				<z-swiper effect="cube" cube-shadow vertical :loop="false" :showIndicators="false"
-					customStyle="height:400rpx;width:400rpx;">
-					<z-swiper-item>
-						<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg"
-							mode="aspectFill">
-						</image>
-					</z-swiper-item>
-					<z-swiper-item>
-						<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe2.jpg"
-							mode="aspectFill">
-						</image>
-					</z-swiper-item>
-					<z-swiper-item>
-						<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe3.jpg"
-							mode="aspectFill">
-						</image>
-					</z-swiper-item>
-					<z-swiper-item>
-						<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe4.jpg"
-							mode="aspectFill">
-						</image>
-					</z-swiper-item>
-					<z-swiper-item>
-						<image class="image" src="https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg"
-							mode="aspectFill">
-						</image>
-					</z-swiper-item>
-				</z-swiper>
-			</view>
+			<z-swiper custom-style="height:300rpx;" :options="optionsVertical">
+				<z-swiper-item v-for="(item,index) in list" :key="index">
+					<image class="image" :src="item" mode="aspectFill">
+					</image>
+				</z-swiper-item>
+			</z-swiper>
+		</demo-block>
+		<demo-block title="无限循环">
+			<z-swiper custom-style="height:300rpx;" :options="optionsLoop">
+				<z-swiper-item v-for="(item,index) in loopList
+				" :key="index">
+					<image class="image" :src="item" mode="aspectFill">
+					</image>
+				</z-swiper-item>
+			</z-swiper>
 		</demo-block>
 	</view>
 </template>
@@ -136,21 +42,72 @@
 		components: {
 			DemoBlock
 		},
+		data() {
+			return {
+				options: {
+					effect: 'cube',
+					cubeEffect: {
+						shadow: true,
+						slideShadows: true,
+						shadowOffset: 20,
+						shadowScale: 0.94,
+					},
+				},
+				optionsAutoplay: {
+					effect: 'cube',
+					cubeEffect: {
+						shadow: true,
+						slideShadows: true,
+						shadowOffset: 20,
+						shadowScale: 0.94,
+					},
+					autoplay: true
+				},
+				optionsVertical: {
+					effect: 'cube',
+					cubeEffect: {
+						shadow: true,
+						slideShadows: true,
+						shadowOffset: 20,
+						shadowScale: 0.94,
+					},
+					direction: 'vertical'
+				},
+				optionsLoop: {
+					effect: 'cube',
+					cubeEffect: {
+						shadow: true,
+						slideShadows: true,
+						shadowOffset: 20,
+						shadowScale: 0.94,
+					},
+					loop: true
+				},
+				list: [
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe2.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe3.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe4.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg',
+				],
+				loopList: [
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe2.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe3.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe4.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg',
+					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg',
+				],
+			}
+		},
 	}
 </script>
 
 <style scoped lang="scss">
 	.demo-swiper {
-		&-cube {
-			height: 600rpx;
-			width: 600rpx;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-		}
-
 		.image {
-			height: 400rpx;
+			height: 300rpx;
 			width: 100%;
 		}
 	}
