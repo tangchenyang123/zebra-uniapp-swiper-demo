@@ -104,7 +104,16 @@
 			}
 
 		}
-	],
+	    ,{
+            "path" : "pages/thumbs/index",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "Thumbs",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "zebra-swiper",

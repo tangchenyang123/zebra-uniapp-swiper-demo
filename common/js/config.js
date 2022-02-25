@@ -22,6 +22,10 @@ export default [{
 			path: '/switcher',
 			title: 'Switcher 切换器',
 			image: url + '/switcher/switcher@4x.png'
+		}, {
+			path: '/thumbs',
+			title: 'Thumbs 缩略图',
+			image: url + '/thumbs/thumbs@4x.png'
 		}]
 	},
 	{
