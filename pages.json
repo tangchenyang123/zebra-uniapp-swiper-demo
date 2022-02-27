@@ -113,6 +113,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/scrollbar/index",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "Scrollbar",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

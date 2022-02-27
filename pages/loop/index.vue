@@ -1,7 +1,7 @@
 <template>
 	<view class="demo-swiper">
 		<demo-block title="基础用法">
-			<z-swiper :options="{loop : true}">
+			<z-swiper v-model="list" :options="{loop : true}">
 				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
@@ -9,7 +9,7 @@
 			</z-swiper>
 		</demo-block>
 		<demo-block title="自动播放">
-			<z-swiper :options="{loop : true,autoplay:true}">
+			<z-swiper v-model="list" :options="{loop : true,autoplay:true}">
 				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
@@ -37,8 +37,6 @@
 					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg',
 					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg'
 				],
-				// loopFirstList: ['https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg'],
-				// loopLastList: ['https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg']
 			}
 		},
 		methods: {}

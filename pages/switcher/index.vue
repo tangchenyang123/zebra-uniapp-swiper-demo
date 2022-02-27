@@ -1,7 +1,7 @@
 <template>
 	<view class="demo-switcher">
 		<demo-block title="基础用法">
-			<z-swiper :options="options">
+			<z-swiper v-model="list" :options="options">
 				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
@@ -9,7 +9,7 @@
 			</z-swiper>
 		</demo-block>
 		<demo-block title="插槽自定义">
-			<z-swiper :options="optionsSlot">
+			<z-swiper v-model="list" :options="optionsSlot">
 				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
@@ -27,7 +27,7 @@
 			</z-swiper>
 		</demo-block>
 		<demo-block title="完全自定义">
-			<z-swiper ref="zSwiper" :options="optionsCustom">
+			<z-swiper v-model="list" ref="zSwiper" :options="optionsCustom">
 				<z-swiper-item v-for="(item,index) in loopList" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>

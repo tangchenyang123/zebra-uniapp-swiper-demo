@@ -1,37 +1,37 @@
 <template>
 	<view class="demo-swiper">
 		<demo-block title="切换效果-创意性">
-			<z-swiper :options="options1">
+			<z-swiper v-model="list" :options="options1">
 				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
 				</z-swiper-item>
 			</z-swiper>
-			<z-swiper :options="options2">
+			<z-swiper v-model="list" :options="options2">
 				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
 				</z-swiper-item>
 			</z-swiper>
-			<z-swiper :options="options3">
+			<z-swiper v-model="list" :options="options3">
 				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
 				</z-swiper-item>
 			</z-swiper>
-			<z-swiper :options="options4">
+			<z-swiper v-model="list" :options="options4">
 				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
 				</z-swiper-item>
 			</z-swiper>
-			<z-swiper :options="options5">
+			<z-swiper v-model="list" :options="options5">
 				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
 				</z-swiper-item>
 			</z-swiper>
-			<z-swiper :options="options6">
+			<z-swiper v-model="list" :options="options6">
 				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>

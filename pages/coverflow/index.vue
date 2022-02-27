@@ -1,7 +1,7 @@
 <template>
 	<view class="demo-swiper">
 		<demo-block title="切换效果-3D流">
-			<z-swiper :options="options">
+			<z-swiper v-model="list" :options="options">
 				<z-swiper-item :custom-style="{width:'500rpx',height:'500rpx'}" v-for="(item,index) in list"
 					:key="index">
 					<image class="image" :src="item" mode="aspectFill">
@@ -10,7 +10,7 @@
 			</z-swiper>
 		</demo-block>
 		<demo-block title="自动播放">
-			<z-swiper :options="optionsAutoplay">
+			<z-swiper v-model="list" :options="optionsAutoplay">
 				<z-swiper-item :custom-style="{width:'500rpx',height:'500rpx'}" v-for="(item,index) in list"
 					:key="index">
 					<image class="image" :src="item" mode="aspectFill">
@@ -19,7 +19,7 @@
 			</z-swiper>
 		</demo-block>
 		<demo-block title="纵向">
-			<z-swiper custom-style="height:600rpx;" :options="optionsVertical">
+			<z-swiper v-model="list" custom-style="height:600rpx;" :options="optionsVertical">
 				<z-swiper-item :custom-style="{width:'100%',height:'400rpx'}" v-for="(item,index) in list" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
@@ -27,7 +27,7 @@
 			</z-swiper>
 		</demo-block>
 		<demo-block title="无限循环">
-			<z-swiper :options="optionsLoop">
+			<z-swiper v-model="loopList" :options="optionsLoop">
 				<z-swiper-item :custom-style="{width:'500rpx',height:'500rpx'}" v-for="(item,index) in loopList
 				" :key="index">
 					<image class="image" :src="item" mode="aspectFill">

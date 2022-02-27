@@ -1,13 +1,13 @@
 <template>
 	<view class="demo-swiper">
 		<demo-block title="基础用法">
-			<z-swiper v-if="swiperThumbsReady" ref="zSwiper" :options="options">
+			<z-swiper ref="zSwiper" v-model="list" :options="options">
 				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
 				</z-swiper-item>
 			</z-swiper>
-			<z-swiper ref="zSwiperThumbs" :options="optionsThumbs">
+			<z-swiper ref="zSwiperThumbs" v-model="list" :options="optionsThumbs">
 				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="thumbImage" :src="item" mode="aspectFill">
 					</image>
@@ -15,13 +15,13 @@
 			</z-swiper>
 		</demo-block>
 		<demo-block title="自动播放">
-			<z-swiper v-if="swiperThumbsAutoplayReady" ref="zSwiperAuto" :options="optionsAuto">
+			<z-swiper ref="zSwiperAuto" v-model="list" :options="optionsAuto">
 				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
 				</z-swiper-item>
 			</z-swiper>
-			<z-swiper ref="zSwiperThumbsAuto" :options="optionsThumbsAuto">
+			<z-swiper ref="zSwiperThumbsAuto" v-model="list" :options="optionsThumbsAuto">
 				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="thumbImage" :src="item" mode="aspectFill">
 					</image>
@@ -50,6 +50,7 @@
 				},
 				options: {
 					spaceBetween: 10,
+					init: false,
 					thumbs: {
 						swiper: true
 					}
@@ -65,6 +66,7 @@
 				},
 				optionsAuto: {
 					spaceBetween: 10,
+					init: false,
 					thumbs: {
 						swiper: true
 					},
@@ -76,27 +78,21 @@
 					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe3.jpg',
 					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe4.jpg',
 					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg',
-				],
-				swiperThumbsReady: false,
-				swiperThumbsAutoplayReady: false
+				]
 			}
 		},
 		onReady() {
 			this.$refs.zSwiperThumbs.setSwiperOn("init", (swiperThumbs) => {
-				this.swiperThumbsReady = true;
-				setTimeout(() => {
-					this.$refs.zSwiper.setSwiperOn("_swiper", (swiper) => {
-						swiper.params.thumbs.swiper = swiperThumbs;
-					})
-				}, 0)
+				this.$refs.zSwiper.swiper.on("beforeMount", (swiper) => {
+					swiper.params.thumbs.swiper = swiperThumbs;
+				})
+				this.$refs.zSwiper.swiper.init();
 			});
 			this.$refs.zSwiperThumbsAuto.setSwiperOn("init", (swiperThumbs) => {
-				this.swiperThumbsAutoplayReady = true;
-				setTimeout(() => {
-					this.$refs.zSwiperAuto.setSwiperOn("_swiper", (swiper) => {
-						swiper.params.thumbs.swiper = swiperThumbs;
-					})
-				}, 0)
+				this.$refs.zSwiperAuto.swiper.on("beforeMount", (swiper) => {
+					swiper.params.thumbs.swiper = swiperThumbs;
+				})
+				this.$refs.zSwiperAuto.swiper.init();
 			});
 		}
 	}

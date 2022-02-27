@@ -1,7 +1,7 @@
 <template>
 	<view class="demo-swiper">
 		<demo-block title="自定义">
-			<z-swiper @slideChange="onChange">
+			<z-swiper v-model="list" @slideChange="onChange">
 				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
@@ -10,7 +10,7 @@
 					<view class="custom-indicator">{{ current + 1 }}/{{list.length}}</view>
 				</template>
 			</z-swiper>
-			<z-swiper @slideChange="onChange1" ref="zSwiper">
+			<z-swiper v-model="list" @slideChange="onChange1" ref="zSwiper">
 				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
@@ -19,13 +19,13 @@
 					<view class="custom-indicator-list">
 						<view
 							:class="['custom-indicator-list-item',index == current1?'custom-indicator-list-item-active':'']"
-							v-for="(item,index) in list.length" :key="index" @click="changSwiper(index)">
+							v-for="(item,index) in list" :key="index" @click="changSwiper(index)">
 							{{index+1}}
 						</view>
 					</view>
 				</template>
 			</z-swiper>
-			<z-swiper @slideChange="onChange2">
+			<z-swiper v-model="list" @slideChange="onChange2">
 				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
@@ -39,7 +39,7 @@
 					</view>
 				</template>
 			</z-swiper>
-			<z-swiper @slideChange="onChange3">
+			<z-swiper v-model="list" @slideChange="onChange3">
 				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>

@@ -26,6 +26,10 @@ export default [{
 			path: '/thumbs',
 			title: 'Thumbs 缩略图',
 			image: url + '/thumbs/thumbs@4x.png'
+		}, {
+			path: '/scrollbar',
+			title: 'Scrollbar 滚动条',
+			image: url + '/scrollbar/scrollbar@4x.png'
 		}]
 	},
 	{

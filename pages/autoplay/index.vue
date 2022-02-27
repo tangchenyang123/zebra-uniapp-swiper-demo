@@ -1,7 +1,7 @@
 <template>
 	<view class="demo-swiper">
 		<demo-block title="基础用法">
-			<z-swiper :options="{autoplay:true}">
+			<z-swiper v-model="list" :options="{autoplay:true}">
 				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
@@ -9,7 +9,7 @@
 			</z-swiper>
 		</demo-block>
 		<demo-block title="时间间隔">
-			<z-swiper :options="{ autoplay: {delay: 1000}}">
+			<z-swiper v-model="list" :options="{ autoplay: {delay: 1000}}">
 				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
@@ -17,7 +17,7 @@
 			</z-swiper>
 		</demo-block>
 		<demo-block title="自动停止">
-			<z-swiper :options="{ autoplay: {stopOnLastSlide: true}}">
+			<z-swiper v-model="list" :options="{ autoplay: {stopOnLastSlide: true}}">
 				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
@@ -25,7 +25,7 @@
 			</z-swiper>
 		</demo-block>
 		<demo-block title="反向">
-			<z-swiper :options="{ autoplay: {reverseDirection: true}}">
+			<z-swiper v-model="list" :options="{ autoplay: {reverseDirection: true}}">
 				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
@@ -33,7 +33,7 @@
 			</z-swiper>
 		</demo-block>
 		<demo-block title="无限循环">
-			<z-swiper :options="{ autoplay:true,loop:true}">
+			<z-swiper v-model="list" :options="{ autoplay:true,loop:true}">
 				<z-swiper-item v-for="(item,index) in loopList" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
