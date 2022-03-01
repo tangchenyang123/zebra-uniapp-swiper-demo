@@ -84,13 +84,14 @@
 		onReady() {
 			this.$refs.zSwiperThumbs.setSwiperOn("init", (swiperThumbs) => {
 				this.$refs.zSwiper.swiper.on("beforeMount", (swiper) => {
-					swiper.params.thumbs.swiper = swiperThumbs;
+					this.$refs.zSwiper.swiper.params.thumbs.swiper = this.$refs.zSwiperThumbs.swiper;
 				})
 				this.$refs.zSwiper.swiper.init();
 			});
 			this.$refs.zSwiperThumbsAuto.setSwiperOn("init", (swiperThumbs) => {
 				this.$refs.zSwiperAuto.swiper.on("beforeMount", (swiper) => {
-					swiper.params.thumbs.swiper = swiperThumbs;
+					this.$refs.zSwiperAuto.swiper.params.thumbs.swiper = this.$refs.zSwiperThumbsAuto
+						.swiper;
 				})
 				this.$refs.zSwiperAuto.swiper.init();
 			});

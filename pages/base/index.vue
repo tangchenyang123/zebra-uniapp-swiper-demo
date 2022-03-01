@@ -63,25 +63,10 @@
 				]
 			}
 		},
-		onReady() {
-			// #ifdef MP-TOUTIAO
-			this.$refs.zSwiper.setSwiperOn("slideChange", (swiper) => {
-				uni.showToast({
-					title: '当前 swiper 索引：' + swiper.activeIndex,
-					icon: 'none'
-				})
-			});
-			// #endif
-		},
 		methods: {
-			// #ifdef MP
-			toJSON() {
-				return this
-			},
-			// #endif
-			onChange(swiper) {
+			onChange(swiper, index) {
 				uni.showToast({
-					title: '当前 swiper 索引：' + swiper.activeIndex,
+					title: '当前 swiper 索引：' + this.$refs.zSwiper.swiper.activeIndex,
 					icon: 'none'
 				})
 			}

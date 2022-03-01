@@ -97,22 +97,17 @@
 			}
 		},
 		methods: {
-			// #ifdef MP
-			toJSON() {
-				return this
+			onChange(swiper, index) {
+				this.current = index;
 			},
-			// #endif
-			onChange(swiper) {
-				this.current = swiper.activeIndex;
+			onChange1(swiper, index) {
+				this.current1 = index;
 			},
-			onChange1(swiper) {
-				this.current1 = swiper.activeIndex;
+			onChange2(swiper, index) {
+				this.current2 = index;
 			},
-			onChange2(swiper) {
-				this.current2 = swiper.activeIndex;
-			},
-			onChange3(swiper) {
-				this.current3 = swiper.activeIndex;
+			onChange3(swiper, index) {
+				this.current3 = index;
 			},
 			changSwiper(index) {
 				if (index != this.current1) {
