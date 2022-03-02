@@ -33,7 +33,7 @@
 			</z-swiper>
 		</demo-block>
 		<demo-block title="无限循环">
-			<z-swiper v-model="list" :options="{ autoplay:true,loop:true}">
+			<z-swiper v-model="loopList" :options="{ autoplay:true,loop:true}">
 				<z-swiper-item v-for="(item,index) in loopList" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
@@ -59,13 +59,11 @@
 					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg',
 				],
 				loopList: [
-					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg',
 					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg',
 					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe2.jpg',
 					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe3.jpg',
 					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe4.jpg',
 					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg',
-					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg',
 				],
 			}
 		}

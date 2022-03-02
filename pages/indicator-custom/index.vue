@@ -1,7 +1,7 @@
 <template>
 	<view class="demo-swiper">
 		<demo-block title="自定义">
-			<z-swiper v-model="list" @slideChange="onChange">
+			<z-swiper ref="zSwiper" v-model="list" @slideChange="onChange">
 				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
@@ -10,7 +10,7 @@
 					<view class="custom-indicator">{{ current + 1 }}/{{list.length}}</view>
 				</template>
 			</z-swiper>
-			<z-swiper v-model="list" @slideChange="onChange1" ref="zSwiper">
+			<z-swiper ref="zSwiper1" v-model="list" @slideChange="onChange1">
 				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
@@ -25,7 +25,7 @@
 					</view>
 				</template>
 			</z-swiper>
-			<z-swiper v-model="list" @slideChange="onChange2">
+			<z-swiper ref="zSwiper2" v-model="list" @slideChange="onChange2">
 				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
@@ -39,7 +39,7 @@
 					</view>
 				</template>
 			</z-swiper>
-			<z-swiper v-model="list" @slideChange="onChange3">
+			<z-swiper ref="zSwiper3" v-model="list" @slideChange="onChange3">
 				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
@@ -97,21 +97,21 @@
 			}
 		},
 		methods: {
-			onChange(swiper, index) {
-				this.current = index;
+			onChange() {
+				this.current = this.$refs.zSwiper.swiper.activeIndex;
 			},
-			onChange1(swiper, index) {
-				this.current1 = index;
+			onChange1() {
+				this.current1 = this.$refs.zSwiper1.swiper.activeIndex;
 			},
-			onChange2(swiper, index) {
-				this.current2 = index;
+			onChange2() {
+				this.current2 = this.$refs.zSwiper2.swiper.activeIndex;
 			},
-			onChange3(swiper, index) {
-				this.current3 = index;
+			onChange3() {
+				this.current3 = this.$refs.zSwiper3.swiper.activeIndex;
 			},
 			changSwiper(index) {
 				if (index != this.current1) {
-					this.$refs.zSwiper.swiper.slideTo(index, 300, false);
+					this.$refs.zSwiper1.swiper.slideTo(index, 300, false);
 				}
 			},
 		}

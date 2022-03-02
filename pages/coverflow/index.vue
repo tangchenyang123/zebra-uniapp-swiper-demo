@@ -95,7 +95,6 @@
 						modifier: 1,
 						slideShadows: true,
 					},
-					loopedSlides: 5,
 					loop: true
 				},
 				list: [
@@ -106,16 +105,6 @@
 					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg',
 				],
 				loopList: [
-					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg',
-					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe2.jpg',
-					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe3.jpg',
-					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe4.jpg',
-					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg',
-					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg',
-					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe2.jpg',
-					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe3.jpg',
-					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe4.jpg',
-					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg',
 					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg',
 					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe2.jpg',
 					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe3.jpg',

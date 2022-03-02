@@ -27,7 +27,7 @@
 			</z-swiper>
 		</demo-block>
 		<demo-block title="完全自定义">
-			<z-swiper v-model="list" ref="zSwiper" :options="optionsCustom">
+			<z-swiper v-model="loopList" ref="zSwiper" :options="optionsCustom">
 				<z-swiper-item v-for="(item,index) in loopList" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
@@ -74,13 +74,11 @@
 					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg',
 				],
 				loopList: [
-					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg',
 					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg',
 					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe2.jpg',
 					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe3.jpg',
 					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe4.jpg',
 					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg',
-					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg',
 				]
 			}
 		},
