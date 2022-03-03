@@ -103,26 +103,28 @@
 				"enablePullDownRefresh": false
 			}
 
+		}, {
+			"path": "pages/thumbs/index",
+			"style": {
+				"navigationBarTitleText": "Thumbs",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/scrollbar/index",
+			"style": {
+				"navigationBarTitleText": "Scrollbar",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/demos/travel-slider/index",
+			"style": {
+				"navigationStyle": "custom"
+			}
+
 		}
-	    ,{
-            "path" : "pages/thumbs/index",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "Thumbs",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/scrollbar/index",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "Scrollbar",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-    ],
+	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "zebra-swiper",

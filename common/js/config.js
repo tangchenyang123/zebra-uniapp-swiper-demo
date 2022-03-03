@@ -75,5 +75,13 @@ export default [{
 			title: 'Indicator-Custom 自定义',
 			image: url + '/indicator-custom/indicator-custom@4x.png'
 		}]
+	},
+	{
+		groupName: '高级案例',
+		list: [{
+			path: '/demos/travel-slider',
+			title: 'TravelSlider 环游地球',
+			image: url + '/travel-slider/travel-slider@4x.png'
+		}]
 	}
 ]
