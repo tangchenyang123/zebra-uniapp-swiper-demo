@@ -123,6 +123,12 @@
 				"navigationStyle": "custom"
 			}
 
+		}, {
+			"path": "pages/demos/paper/index",
+			"style": {
+				"navigationStyle": "custom"
+			}
+
 		}
 	],
 	"globalStyle": {

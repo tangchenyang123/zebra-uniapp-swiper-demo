@@ -1,6 +1,6 @@
 <template>
 	<view class="demo-swiper">
-		<!-- <demo-block title="切换效果-方块">
+		<demo-block title="切换效果-方块">
 			<z-swiper v-model="list" :options="options">
 				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
@@ -23,7 +23,7 @@
 					</image>
 				</z-swiper-item>
 			</z-swiper>
-		</demo-block> -->
+		</demo-block>
 		<demo-block title="无限循环">
 			<z-swiper v-model="loopList" :options="optionsLoop">
 				<z-swiper-item v-for="(item,index) in loopList
