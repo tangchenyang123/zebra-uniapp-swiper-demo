@@ -130,7 +130,25 @@
 			}
 
 		}
-	],
+	    ,{
+            "path" : "pages/virtual/index",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "Virtual",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/vue2/index",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "zebra-swiper",

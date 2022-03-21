@@ -43,7 +43,6 @@
 				],
 			}
 		},
-		methods: {}
 	}
 </script>
 

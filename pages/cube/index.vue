@@ -17,7 +17,7 @@
 			</z-swiper>
 		</demo-block>
 		<demo-block title="纵向">
-			<z-swiper v-model="list" custom-style="height:300rpx;" :options="optionsVertical">
+			<z-swiper v-model="list" :custom-style="{height:'300rpx'}" :options="optionsVertical">
 				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
@@ -26,8 +26,7 @@
 		</demo-block>
 		<demo-block title="无限循环">
 			<z-swiper v-model="loopList" :options="optionsLoop">
-				<z-swiper-item v-for="(item,index) in loopList
-				" :key="index">
+				<z-swiper-item v-for="(item,index) in loopList" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
 				</z-swiper-item>

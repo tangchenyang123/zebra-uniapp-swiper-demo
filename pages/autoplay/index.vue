@@ -24,17 +24,17 @@
 				</z-swiper-item>
 			</z-swiper>
 		</demo-block>
-		<demo-block title="反向">
-			<z-swiper v-model="list" :options="{ autoplay: {reverseDirection: true}}">
-				<z-swiper-item v-for="(item,index) in list" :key="index">
+		<demo-block title="无限循环">
+			<z-swiper v-model="loopList" :options="{ autoplay:true,loop:true}">
+				<z-swiper-item v-for="(item,index) in loopList" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
 				</z-swiper-item>
 			</z-swiper>
 		</demo-block>
-		<demo-block title="无限循环">
-			<z-swiper v-model="loopList" :options="{ autoplay:true,loop:true}">
-				<z-swiper-item v-for="(item,index) in loopList" :key="index">
+		<demo-block title="反向">
+			<z-swiper v-model="list" :options="{ autoplay: {reverseDirection: true}}">
+				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>
 				</z-swiper-item>

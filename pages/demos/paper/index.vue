@@ -4,7 +4,7 @@
 			<view class="paper-onboarding">
 				<view class="paper-onboarding-fills" :style="[fillsStyle]">
 					<view v-for="(item,index) in list" :key="index" class="paper-onboarding-fill"
-						:style="[{backgroundColor:item.bgColor},item.fillStyle]">
+						:style="[{backgroundColor:item.bgColor},fillStyleList[index].fillStyle]">
 
 					</view>
 				</view>
@@ -76,7 +76,20 @@
 						},
 					},
 				},
-				fillsStyle: {}
+				fillsStyle: {},
+				fillStyleList: [{
+						fillStyle: {}
+					},
+					{
+						fillStyle: {}
+					},
+					{
+						fillStyle: {}
+					},
+					{
+						fillStyle: {}
+					},
+				],
 			}
 		},
 		mounted() {
@@ -101,14 +114,14 @@
 					const slideProgress = slideEl.progress;
 					const progress = 1 - Math.max(Math.min(Math.abs(slideProgress), 1), 0);
 					if (slideProgress < 0) {
-						this.$set(this.list[i].fillStyle, 'transform', `scale(${progress})`);
+						this.$set(this.fillStyleList[i].fillStyle, 'transform', `scale(${progress})`);
 					} else {
-						this.$set(this.list[i].fillStyle, 'transform', `scale(1)`);
+						this.$set(this.fillStyleList[i].fillStyle, 'transform', `scale(1)`);
 					}
 				}
 			},
 			onTransition(swiper, duration) {
-				this.list.forEach((fillEl) => {
+				this.fillStyleList.forEach((fillEl) => {
 					this.$set(fillEl.fillStyle, 'transitionDuration', `${duration}ms`);
 				});
 			},

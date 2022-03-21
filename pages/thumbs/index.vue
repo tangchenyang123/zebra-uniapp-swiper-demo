@@ -7,7 +7,7 @@
 					</image>
 				</z-swiper-item>
 			</z-swiper>
-			<z-swiper ref="zSwiperThumbs" v-model="list" :options="optionsThumbs">
+			<z-swiper ref="zSwiperThumbs" v-model="list" :options="optionsThumbs" @swiper="setThumbsSwiper">
 				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="thumbImage" :src="item" mode="aspectFill">
 					</image>
@@ -21,7 +21,7 @@
 					</image>
 				</z-swiper-item>
 			</z-swiper>
-			<z-swiper ref="zSwiperThumbsAuto" v-model="list" :options="optionsThumbsAuto">
+			<z-swiper ref="zSwiperThumbsAuto" v-model="list" :options="optionsThumbsAuto" @swiper="setThumbsAutoSwiper">
 				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="thumbImage" :src="item" mode="aspectFill">
 					</image>
@@ -50,7 +50,6 @@
 				},
 				options: {
 					spaceBetween: 10,
-					init: false,
 					thumbs: {
 						swiper: true
 					}
@@ -66,7 +65,6 @@
 				},
 				optionsAuto: {
 					spaceBetween: 10,
-					init: false,
 					thumbs: {
 						swiper: true
 					},
@@ -81,20 +79,17 @@
 				]
 			}
 		},
-		onReady() {
-			this.$refs.zSwiperThumbs.setSwiperOn("init", (swiperThumbs) => {
+		methods: {
+			setThumbsSwiper() {
 				this.$refs.zSwiper.swiper.on("beforeMount", (swiper) => {
 					this.$refs.zSwiper.swiper.params.thumbs.swiper = this.$refs.zSwiperThumbs.swiper;
 				})
-				this.$refs.zSwiper.swiper.init();
-			});
-			this.$refs.zSwiperThumbsAuto.setSwiperOn("init", (swiperThumbs) => {
+			},
+			setThumbsAutoSwiper() {
 				this.$refs.zSwiperAuto.swiper.on("beforeMount", (swiper) => {
-					this.$refs.zSwiperAuto.swiper.params.thumbs.swiper = this.$refs.zSwiperThumbsAuto
-						.swiper;
+					this.$refs.zSwiperAuto.swiper.params.thumbs.swiper = this.$refs.zSwiperThumbsAuto.swiper;
 				})
-				this.$refs.zSwiperAuto.swiper.init();
-			});
+			},
 		}
 	}
 </script>

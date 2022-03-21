@@ -3,34 +3,46 @@ const url = 'https://cdn.zebraui.com/zebra-swiper';
 export default [{
 		groupName: '基础轮播',
 		list: [{
-			path: '/base',
-			title: 'Base 基础',
-			image: url + '/base/base@4x.png'
-		}, {
-			path: '/carousel',
-			title: 'Carousel 旋转木马',
-			image: url + '/carousel/carousel@4x.png'
-		}, {
-			path: '/loop',
-			title: 'Loop 无限循环',
-			image: url + '/loop/loop@4x.png'
-		}, {
-			path: '/autoplay',
-			title: 'Autoplay 自动播放',
-			image: url + '/autoplay/autoplay@4x.png'
-		}, {
-			path: '/switcher',
-			title: 'Switcher 切换器',
-			image: url + '/switcher/switcher@4x.png'
-		}, {
-			path: '/thumbs',
-			title: 'Thumbs 缩略图',
-			image: url + '/thumbs/thumbs@4x.png'
-		}, {
-			path: '/scrollbar',
-			title: 'Scrollbar 滚动条',
-			image: url + '/scrollbar/scrollbar@4x.png'
-		}]
+				path: '/base',
+				title: 'Base 基础',
+				image: url + '/base/base@4x.png'
+			},
+			// {
+			// 	path: '/vue2',
+			// 	title: 'Base 基础',
+			// 	image: url + '/vue2/vue2@4x.png'
+			// },
+			{
+				path: '/carousel',
+				title: 'Carousel 旋转木马',
+				image: url + '/carousel/carousel@4x.png'
+			}, {
+				path: '/loop',
+				title: 'Loop 无限循环',
+				image: url + '/loop/loop@4x.png'
+			}, {
+				path: '/autoplay',
+				title: 'Autoplay 自动播放',
+				image: url + '/autoplay/autoplay@4x.png'
+			}, {
+				path: '/switcher',
+				title: 'Switcher 切换器',
+				image: url + '/switcher/switcher@4x.png'
+			}, {
+				path: '/thumbs',
+				title: 'Thumbs 缩略图',
+				image: url + '/thumbs/thumbs@4x.png'
+			}, {
+				path: '/scrollbar',
+				title: 'Scrollbar 滚动条',
+				image: url + '/scrollbar/scrollbar@4x.png'
+			},
+			// {
+			// 	path: '/virtual',
+			// 	title: 'Virtual 滚动条',
+			// 	image: url + '/virtual/virtual@4x.png'
+			// },
+		]
 	},
 	{
 		groupName: '切换效果',
@@ -79,14 +91,13 @@ export default [{
 	{
 		groupName: '高级案例',
 		list: [{
-				path: '/demos/travel-slider',
-				title: 'TravelSlider 环游地球',
-				image: url + '/travel-slider/travel-slider@4x.png'
-			}, {
-				path: '/demos/paper',
-				title: 'Paper 全屏',
-				image: url + '/paper/paper@4x.png'
-			}
-		]
+			path: '/demos/travel-slider',
+			title: 'TravelSlider 环游地球',
+			image: url + '/travel-slider/travel-slider@4x.png'
+		}, {
+			path: '/demos/paper',
+			title: 'Paper 全屏',
+			image: url + '/paper/paper@4x.png'
+		}]
 	}
 ]

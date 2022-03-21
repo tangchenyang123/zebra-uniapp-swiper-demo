@@ -17,7 +17,7 @@
 			</z-swiper>
 		</demo-block>
 		<demo-block title="纵向">
-			<z-swiper v-model="list" custom-style="height:300rpx;" :options="options">
+			<z-swiper v-model="list" :custom-style="{height:'300rpx'}" :options="options">
 				<z-swiper-item v-for="(item,index) in list" :key="index">
 					<image class="image" :src="item" mode="aspectFill">
 					</image>

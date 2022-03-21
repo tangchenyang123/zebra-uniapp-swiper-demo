@@ -8,6 +8,14 @@
 				</z-swiper-item>
 			</z-swiper>
 		</demo-block>
+		<demo-block title="自适应">
+			<z-swiper v-model="list" :options="{slidesPerView : 'auto',centeredSlides: true,spaceBetween: 14}">
+				<z-swiper-item v-for="(item,index) in list" :key="index" :custom-style="{width:'500rpx'}">
+					<image class="image" :src="item" mode="aspectFill">
+					</image>
+				</z-swiper-item>
+			</z-swiper>
+		</demo-block>
 		<demo-block title="居中">
 			<z-swiper v-model="list" :options="{slidesPerView : 2,centeredSlides : true}">
 				<z-swiper-item v-for="(item,index) in list" :key="index">
@@ -62,13 +70,6 @@
 					'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg',
 				]
 			}
-		},
-		methods: {
-			// #ifdef MP
-			toJSON() {
-				return this
-			},
-			// #endif
 		}
 	}
 </script>
