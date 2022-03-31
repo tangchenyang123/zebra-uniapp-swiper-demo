@@ -8,9 +8,9 @@ export default [{
 				image: url + '/base/base@4x.png'
 			},
 			// {
-			// 	path: '/vue2',
-			// 	title: 'Base 基础',
-			// 	image: url + '/vue2/vue2@4x.png'
+			// 	path: '/debug',
+			// 	title: 'Debug 调试',
+			// 	image: url + '/debug/debug@4x.png'
 			// },
 			{
 				path: '/carousel',
@@ -91,13 +91,19 @@ export default [{
 	{
 		groupName: '高级案例',
 		list: [{
-			path: '/demos/travel-slider',
-			title: 'TravelSlider 环游地球',
-			image: url + '/travel-slider/travel-slider@4x.png'
-		}, {
-			path: '/demos/paper',
-			title: 'Paper 全屏',
-			image: url + '/paper/paper@4x.png'
-		}]
+				path: '/demos/travel-slider',
+				title: 'TravelSlider 环游地球',
+				image: url + '/travel-slider/travel-slider@4x.png'
+			}, {
+				path: '/demos/paper',
+				title: 'Paper 全屏',
+				image: url + '/paper/paper@4x.png'
+			}
+			// , {
+			// 	path: '/demos/carousel',
+			// 	title: 'Carousel 层叠',
+			// 	image: url + '/carousel-demo/carousel-demo@4x.png'
+			// },
+		]
 	}
 ]

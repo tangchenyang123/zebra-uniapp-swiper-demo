@@ -83,7 +83,7 @@
 					slidesPerView: 'auto',
 					centeredSlides: true,
 					spaceBetween: 24,
-					watchSlidesProgress: true,
+					watchSlidesProgress: true
 				},
 				planetStyle: {}
 			}
