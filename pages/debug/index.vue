@@ -252,16 +252,22 @@
 			return {
 				customStyle: {},
 				options: {
-					speed: 300,
-					slidesPerView: 1,
-					centeredSlides: false,
-					centeredSlidesBounds: false,
-					slidesPerGroup: 1,
-					spaceBetween: 0,
-					slidesOffsetBefore: 0,
-					slidesOffsetAfter: 0,
-					centerInsufficientSlides: false,
-					loop: false
+					// speed: 300,
+					// slidesPerView: 1,
+					// centeredSlides: false,
+					// centeredSlidesBounds: false,
+					// slidesPerGroup: 1,
+					// spaceBetween: 0,
+					// slidesOffsetBefore: 0,
+					// slidesOffsetAfter: 0,
+					// centerInsufficientSlides: false,
+					// loop: false
+					effect: 'coverflow',
+					centeredSlides: true,
+					spaceBetween: 60,
+					slidesPerView: 3,
+					// width: 200,
+					loop: true
 				},
 				speedValue: 300,
 				spaceBetween: 0,
@@ -284,7 +290,6 @@
 		},
 		methods: {
 			radioChangeData(val) {
-				console.log(val)
 				this.list = Array(...Array(parseInt(val.detail.value))).map((item, index) => {
 					return {
 						img: `https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe${index+1}.jpg`
@@ -313,25 +318,21 @@
 				Object.assign(this.options, {
 					slidesPerView: parseInt(value.detail.value)
 				})
-				console.log(this.options)
 			},
 			radioChangeCenteredSlides(value) {
 				Object.assign(this.options, {
 					centeredSlides: value.detail.value == "true" ? true : false
 				})
-				console.log(this.options)
 			},
 			radioChangeCenteredSlidesBounds(value) {
 				Object.assign(this.options, {
 					centeredSlidesBounds: value.detail.value == "true" ? true : false
 				})
-				console.log(this.options)
 			},
 			radioChangeCenterInsufficientSlides(value) {
 				Object.assign(this.options, {
 					centerInsufficientSlides: value.detail.value == "true" ? true : false
 				})
-				console.log(this.options)
 			},
 			radioChangeLoop(value) {
 				Object.assign(this.options, {

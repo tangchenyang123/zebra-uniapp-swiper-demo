@@ -24,6 +24,14 @@
 				</z-swiper-item>
 			</z-swiper>
 		</demo-block>
+		<demo-block title="关闭旋转">
+			<z-swiper v-model="list" :options="optionsRotate">
+				<z-swiper-item :custom-style="slideCustomStyle" v-for="(item,index) in list" :key="index">
+					<image class="image" :src="item" mode="aspectFill">
+					</image>
+				</z-swiper-item>
+			</z-swiper>
+		</demo-block>
 		<demo-block title="无限循环">
 			<z-swiper v-model="loopList" :options="optionsLoop">
 				<z-swiper-item :custom-style="slideCustomStyle" v-for="(item,index) in loopList
@@ -60,6 +68,12 @@
 				optionsVertical: {
 					effect: 'cards',
 					direction: 'vertical'
+				},
+				optionsRotate: {
+					effect: 'cards',
+					cardsEffect: {
+						rotate: false
+					}
 				},
 				optionsLoop: {
 					effect: 'cards',

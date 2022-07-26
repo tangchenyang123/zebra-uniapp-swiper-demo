@@ -39,7 +39,7 @@ export default [{
 			},
 			// {
 			// 	path: '/virtual',
-			// 	title: 'Virtual 滚动条',
+			// 	title: 'Virtual 虚拟',
 			// 	image: url + '/virtual/virtual@4x.png'
 			// },
 		]
