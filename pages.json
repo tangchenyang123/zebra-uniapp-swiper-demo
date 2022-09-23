@@ -151,6 +151,14 @@
 				"enablePullDownRefresh": false
 			}
 
+		}, {
+			"path": "pages/demos/video-swiper/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false
+			}
+
 		}
 	],
 	"globalStyle": {
