@@ -32,6 +32,22 @@
 				</z-swiper-item>
 			</z-swiper>
 		</demo-block>
+		<demo-block title="偏移距离">
+			<z-swiper v-model="list" :options="optionsOffset">
+				<z-swiper-item :custom-style="slideCustomStyle" v-for="(item,index) in list" :key="index">
+					<image class="image" :src="item" mode="aspectFill">
+					</image>
+				</z-swiper-item>
+			</z-swiper>
+		</demo-block>
+		<demo-block title="旋转角度">
+			<z-swiper v-model="list" :options="optionsRotateNumber">
+				<z-swiper-item :custom-style="slideCustomStyle" v-for="(item,index) in list" :key="index">
+					<image class="image" :src="item" mode="aspectFill">
+					</image>
+				</z-swiper-item>
+			</z-swiper>
+		</demo-block>
 		<demo-block title="无限循环">
 			<z-swiper v-model="loopList" :options="optionsLoop">
 				<z-swiper-item :custom-style="slideCustomStyle" v-for="(item,index) in loopList
@@ -73,6 +89,18 @@
 					effect: 'cards',
 					cardsEffect: {
 						rotate: false
+					}
+				},
+				optionsOffset: {
+					effect: 'cards',
+					cardsEffect: {
+						perSlideOffset: 14
+					}
+				},
+				optionsRotateNumber: {
+					effect: 'cards',
+					cardsEffect: {
+						perSlideRotate: 20
 					}
 				},
 				optionsLoop: {
